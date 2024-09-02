@@ -6,6 +6,7 @@ interface Props {
     color?: string;
     size?: number;
     blackText?: boolean;
+    onPress: () => void;
 }
 
 
@@ -14,10 +15,13 @@ export const CalculatorButton = ({
     color = colors.darkGray,
     size = styles.button.width,
     blackText = false,
+    onPress
 
 }: Props) => {
   return (
-    <Pressable style={ ({pressed}) => ({
+    <Pressable 
+        onPress={ () => onPress()}
+        style={ ({pressed}) => ({
         ...styles.button,
         width: size,
         backgroundColor: color,
