@@ -32,10 +32,34 @@ export const styles = StyleSheet.create({
         fontWeight: '400',
     },
 
+    row: {
+        flexDirection: 'row',
+        justifyContent: 'center',
+        marginBottom: 18,
+        paddingHorizontal: 10,
+    },
+
     subResult: {
         color: colors.textSecondary,
         fontSize: 40,
         textAlign: 'right',
+        fontWeight: '300',
+    },
+
+    button: {
+        height: 80,
+        width: 80,
+        backgroundColor: colors.darkGray,
+        borderRadius: 100,
+        justifyContent: 'center',
+        marginHorizontal: 10
+    },
+
+    buttonText: {
+        textAlign: 'center',
+        padding: 10,
+        fontSize: 30,
+        color: 'white',
         fontWeight: '300',
     }
 
