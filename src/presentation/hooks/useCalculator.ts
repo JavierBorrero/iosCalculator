@@ -36,11 +36,44 @@ export const useCalculator = () => {
         return setNumber( number + numberString );
     }
 
+    const clean = () => {
+        setNumber('0');
+    }
+
+    // Borrar el ultimo numero
+    const deleteOperation = () => {
+
+        let currentSign = '';
+        let temporalNumber = number;
+
+        if ( number.includes('-') ) {
+            currentSign = '-';
+            temporalNumber = number.substring(1);
+        }
+
+        if ( temporalNumber.length > 1 ) {
+            return setNumber( currentSign + temporalNumber.slice(0,-1) );
+        }
+
+        setNumber('0');
+    }
+
+    const toggleSign = () => {
+        if ( number.includes('-') ) {
+            return setNumber( number.replace('-', '') )
+        }
+
+        setNumber( '-' + number);
+    }
+
     return {
         // Properties
         number,
 
         // Methods
         buildNumber,
+        toggleSign,
+        clean,
+        deleteOperation
     }
 }
