@@ -1,4 +1,4 @@
-import { Pressable, Text, View } from 'react-native'
+import { Text, View } from 'react-native'
 import { colors, styles } from '../../config/theme/app-theme'
 import { CalculatorButton } from '../components/CalculatorButton'
 import { useCalculator } from '../hooks/useCalculator'
@@ -8,6 +8,7 @@ export const CalculatorScreen = () => {
   const {
     number, prevNumber, buildNumber, toggleSign, clean, deleteOperation,
     divideOperation, multiplyOperation, addOperation, subtractOperation,
+    calculateResult,
   } = useCalculator();
 
   return (
@@ -57,7 +58,7 @@ export const CalculatorScreen = () => {
       <View style={styles.row}>
         <CalculatorButton onPress={() => buildNumber("0")} label="0" size={170}/>
         <CalculatorButton onPress={() => buildNumber(".")} label="." />
-        <CalculatorButton onPress={() => console.log("=")} label="=" color={colors.orange}/>
+        <CalculatorButton onPress={ calculateResult } label="=" color={colors.orange}/>
       </View>
         
     </View>
